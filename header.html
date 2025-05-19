@@ -1,94 +1,93 @@
 <header style="background: #111; color: white; font-family: sans-serif; width: 100%; margin: 0; padding: 0;">
-    <div style="max-width: 1000px; margin: auto; display: flex; align-items: center; justify-content: space-between; padding: 1rem; gap: 1rem; flex-wrap: nowrap;">
+  <div style="max-width: 1000px; margin: auto; display: flex; align-items: center; justify-content: space-between; padding: 1rem; gap: 1rem; flex-wrap: nowrap;">
+    
+    <!-- Logo + Brand -->
+    <a href="index.html" style="display: flex; align-items: center; text-decoration: none; color: white; font-weight: bold; font-size: 1.3rem; white-space: nowrap;">
+      <img src="images/logo.png" alt="Dragon Fist MMA Logo" style="height: 40px; margin-right: 0.5rem; background: black; border-radius: 4px;" />
+      Dragon Fist MMA
+    </a>
+
+    <!-- Navigation -->
+    <nav style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; justify-content: flex-end; flex: 1; white-space: nowrap;">
       
-      <!-- Logo + Brand -->
-      <a href="/index.html" style="display: flex; align-items: center; text-decoration: none; color: white; font-weight: bold; font-size: 1.3rem; white-space: nowrap;">
-        <img src="/images/logo.png" alt="Dragon Fist MMA Logo" style="height: 40px; margin-right: 0.5rem; background: black; border-radius: 4px;" />
-        Dragon Fist MMA
-      </a>
-  
-      <!-- Navigation -->
-      <nav style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; justify-content: flex-end; flex: 1; white-space: nowrap;">
-        
-        <!-- Programs Dropdown -->
-        <div class="dropdown-wrapper">
-          <a href="#" style="color: white; text-decoration: none;">Programs ▾</a>
-          <div class="dropdown">
-            <a href="/little-dragons.html">Little Dragons</a>
-            <a href="/kids-program.html">Kids</a>
-            <a href="/teens-program.html">Teens</a>
-            <a href="/adults-program.html">Adults</a>
-            <a href="/masters-program.html">Masters</a>
-            <a href="/onsite-training.html">Onsite</a>
-            <a href="/private-training.html">Private</a>
-          </div>
+      <!-- Programs Dropdown -->
+      <div class="dropdown-wrapper">
+        <a href="#" style="color: white; text-decoration: none;">Programs ▾</a>
+        <div class="dropdown">
+          <a href="little-dragons.html">Little Dragons</a>
+          <a href="kids-program.html">Kids</a>
+          <a href="teens-program.html">Teens</a>
+          <a href="adults-program.html">Adults</a>
+          <a href="masters-program.html">Masters</a>
+          <a href="onsite-training.html">Onsite</a>
+          <a href="private-training.html">Private</a>
         </div>
-  
-        <a href="/class-schedule.html" style="color: white; text-decoration: none;">Schedule</a>
-        <a href="/instructors.html" style="color: white; text-decoration: none;">Instructors</a>
-        <a href="/videos.html" style="color: white; text-decoration: none;">Videos</a>
-        <a href="/gallery.html" style="color: white; text-decoration: none;">Gallery</a>
-  
-        <!-- More Info Dropdown -->
-        <div class="dropdown-wrapper">
-          <a href="#" style="color: white; text-decoration: none;">More Info ▾</a>
-          <div class="dropdown">
-            <a href="/faq.html">FAQs</a>
-            <a href="/pricing.html">Pricing</a>
-            <a href="/parents-guide.html">Parents Guide</a>
-            <a href="/waiver.html">Waiver</a>
-            <a href="/blog.html">Blog</a>
-          </div>
+      </div>
+
+      <a href="class-schedule.html" style="color: white; text-decoration: none;">Schedule</a>
+      <a href="instructors.html" style="color: white; text-decoration: none;">Instructors</a>
+      <a href="videos.html" style="color: white; text-decoration: none;">Videos</a>
+      <a href="gallery.html" style="color: white; text-decoration: none;">Gallery</a>
+
+      <!-- More Info Dropdown -->
+      <div class="dropdown-wrapper">
+        <a href="#" style="color: white; text-decoration: none;">More Info ▾</a>
+        <div class="dropdown">
+          <a href="faq.html">FAQs</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="parents-guide.html">Parents Guide</a>
+          <a href="waiver.html">Waiver</a>
+          <a href="blog.html">Blog</a>
         </div>
-  
-        <a href="/contact.html" style="color: white; text-decoration: none;">Contact</a>
-      </nav>
-    </div>
-  </header>
-  
-  <!-- Dropdown CSS -->
-  <style>
-    .dropdown-wrapper {
-      position: relative;
-    }
-  
-    .dropdown {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: #222;
-      padding: 0.5rem;
-      min-width: 160px;
-      z-index: 10;
+      </div>
+
+      <a href="contact.html" style="color: white; text-decoration: none;">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Dropdown CSS -->
+<style>
+  .dropdown-wrapper {
+    position: relative;
+  }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #222;
+    padding: 0.5rem;
+    min-width: 160px;
+    z-index: 10;
+    flex-direction: column;
+  }
+
+  .dropdown-wrapper:hover .dropdown {
+    display: flex;
+  }
+
+  .dropdown a {
+    color: white;
+    text-decoration: none;
+    padding: 0.25rem 0;
+  }
+
+  .dropdown a:hover {
+    background: #333;
+  }
+
+  @media (max-width: 768px) {
+    nav {
       flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-top: 1rem;
     }
-  
-    .dropdown-wrapper:hover .dropdown {
-      display: flex;
+
+    .dropdown {
+      position: static;
     }
-  
-    .dropdown a {
-      color: white;
-      text-decoration: none;
-      padding: 0.25rem 0;
-    }
-  
-    .dropdown a:hover {
-      background: #333;
-    }
-  
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-        margin-top: 1rem;
-      }
-  
-      .dropdown {
-        position: static;
-      }
-    }
-  </style>
-  
+  }
+</style>
