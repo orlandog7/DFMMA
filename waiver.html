@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studio Waiver | Dragon Fist MMA</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    main {
+      max-width: 800px;
+      margin: auto;
+      font-family: sans-serif;
+      padding: 3rem 1rem;
+      background-color: white;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    main h1, main h2 {
+      color: #e63946;
+      text-align: center;
+    }
+
+    .print-btn {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .print-btn button {
+      background: #e63946;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    @media print {
+      .print-btn,
+      #header-placeholder,
+      #footer-placeholder {
+        display: none;
+      }
+
+      body {
+        padding: 0;
+      }
+    }
+
+    .signature-line {
+      margin-top: 3rem;
+      border-bottom: 1px solid #000;
+      width: 100%;
+      height: 2rem;
+    }
+
+    .label {
+      margin-top: 0.5rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Shared Header -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <h1>Dragon Fist MMA</h1>
+    <h2>Participant Waiver & Health Disclosure Form</h2>
+
+    <div class="print-btn">
+      <button onclick="window.print()">🖨️ Print This Waiver</button>
+    </div>
+
+    <p>
+      In consideration of participating in martial arts training and related physical activities at Dragon Fist MMA, I hereby acknowledge and agree to the following:
+    </p>
+
+    <ul>
+      <li>I understand that martial arts involves physical contact, strenuous movement, and the risk of injury.</li>
+      <li>I affirm that I (or my child) am in good physical condition and do not suffer from any medical condition that would limit participation or place me at greater risk of injury.</li>
+      <li>I agree to inform the instructor of any past or current injuries, chronic conditions, or physical limitations prior to participation.</li>
+      <li>I assume full responsibility for any injuries or health complications that may arise during participation, and I release Dragon Fist MMA, its instructors, and the facility from liability.</li>
+      <li>I grant permission for emergency medical treatment if deemed necessary.</li>
+      <li>I understand that photos or videos may be taken during class for promotional purposes and I grant permission to use such media unless otherwise stated.</li>
+      <li>I have read and understand the rules of the studio and agree to follow the guidelines and instructions provided by the instructors at all times.</li>
+    </ul>
+
+    <h3 style="margin-top: 2.5rem;">Participant Information</h3>
+    <p><span class="label">Name:</span> ____________________________________________</p>
+    <p><span class="label">Date of Birth:</span> ___________________________________</p>
+    <p><span class="label">Phone Number:</span> _________________________________</p>
+    <p><span class="label">Email:</span> ____________________________________________</p>
+
+    <h3 style="margin-top: 2.5rem;">Health Disclosure</h3>
+    <p>Please list any current injuries, physical conditions, allergies, or medications we should be aware of:</p>
+    <div class="signature-line"></div>
+
+    <h3 style="margin-top: 2.5rem;">Emergency Contact</h3>
+    <p><span class="label">Name:</span> ____________________________________________</p>
+    <p><span class="label">Phone Number:</span> _________________________________</p>
+
+    <h3 style="margin-top: 2.5rem;">Acknowledgment & Signature</h3>
+    <p>
+      I have read and understand this waiver and acknowledge the risks involved. I voluntarily agree to participate in Dragon Fist MMA programs.
+    </p>
+    <p><span class="label">Signature:</span> ______________________________________</p>
+    <p><span class="label">Date:</span> ____________________________________________</p>
+
+    <p style="margin-top: 2rem; font-size: 0.9rem;">If participant is under 18, a parent or legal guardian must sign:</p>
+    <p><span class="label">Parent/Guardian Name:</span> _____________________________</p>
+    <p><span class="label">Signature:</span> ______________________________________</p>
+    <p><span class="label">Date:</span> ____________________________________________</p>
+  </main>
+
+  <!-- Shared Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Load header and footer -->
+  <script src="script.js"></script>
+
+</body>
+</html>

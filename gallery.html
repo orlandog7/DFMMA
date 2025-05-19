@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photo Gallery | Dragon Fist MMA</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .gallery-wrapper {
+      max-width: 1000px;
+      margin: auto;
+      font-family: sans-serif;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .gallery-wrapper h1 {
+      color: #e63946;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 8px;
+      height: 260px;
+      object-fit: contain;
+      background: #f2f2f2;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery-caption {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.85);
+      z-index: 9999;
+      overflow: auto;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .lightbox.active {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+      z-index: 10000;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2.5rem;
+      color: white;
+      background: rgba(0,0,0,0.4);
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .lightbox-prev { left: 2rem; }
+    .lightbox-next { right: 2rem; }
+
+    @media (max-width: 768px) {
+      .lightbox-nav {
+        font-size: 2rem;
+        padding: 0.3rem 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <main class="gallery-wrapper">
+    <h1>Dragon Fist MMA Photo Gallery</h1>
+
+    <div class="gallery-grid" id="gallery">
+      <div>
+        <img src="images/gallery/AdultsSparringPark.jpg" alt="Adult Sparring" data-large="images/gallery/AdultsSparringPark.jpg" />
+        <p class="gallery-caption">Adult Sparring</p>
+      </div>
+      <div>
+        <img src="images/gallery/Masters1.jpg" alt="Adult Training with Bob" data-large="images/gallery/Masters1.jpg" />
+        <p class="gallery-caption">Adult Training with Bob</p>
+      </div>
+      <div>
+        <img src="images/gallery/Matt1.jpg" alt="Instructor Matt" data-large="images/gallery/Matt1.jpg" />
+        <p class="gallery-caption">Instructor Matt</p>
+      </div>
+      <div>
+        <img src="images/gallery/RobandKid1.jpg" alt="Rob and Little Dragon" data-large="images/gallery/RobandKid1.jpg" />
+        <p class="gallery-caption">Instructor Rob training a Little Dragon</p>
+      </div>
+      <div>
+        <img src="images/gallery/RobandKid2.jpg" alt="Rob and Young Child" data-large="images/gallery/RobandKid2.jpg" />
+        <p class="gallery-caption">Instructor Rob training a young child</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <a href="#" class="lightbox-close" id="lightbox-close">&times;</a>
+    <span class="lightbox-nav lightbox-prev" id="prev">&#10094;</span>
+    <img src="" alt="Full Size" id="lightbox-img" />
+    <span class="lightbox-nav lightbox-next" id="next">&#10095;</span>
+  </div>
+
+  <div id="footer-placeholder"></div>
+  <script src="script.js"></script>
+
+  <script>
+    const galleryImages = Array.from(document.querySelectorAll('#gallery img'));
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+
+    let currentIndex = 0;
+
+    function showLightbox(index) {
+      const image = galleryImages[index];
+      lightboxImg.src = image.dataset.large;
+      lightbox.classList.add('active');
+      currentIndex = index;
+    }
+
+    galleryImages.forEach((img, i) => {
+      img.addEventListener('click', () => showLightbox(i));
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+    }
+
+    function showNext() {
+      currentIndex = (currentIndex + 1) % galleryImages.length;
+      showLightbox(currentIndex);
+    }
+
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+      showLightbox(currentIndex);
+    }
+
+    nextBtn.addEventListener('click', showNext);
+    prevBtn.addEventListener('click', showPrev);
+    lightboxClose.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeLightbox();
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'ArrowRight') showNext();
+      if (e.key === 'ArrowLeft') showPrev();
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instructional Videos | Dragon Fist MMA</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .videos-wrapper {
+      max-width: 1000px;
+      margin: auto;
+      font-family: sans-serif;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .videos-wrapper h1 {
+      color: #e63946;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .videos-wrapper p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 1.5rem auto 2rem;
+      line-height: 1.6;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .video-card iframe {
+      width: 100%;
+      height: 200px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .video-card p {
+      margin-top: 0.5rem;
+      font-weight: bold;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .subscribe-link {
+      display: inline-block;
+      margin-top: 3rem;
+      background: #e63946;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .subscribe-link:hover {
+      background: #c72f3b;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Shared Header -->
+  <div id="header-placeholder"></div>
+
+  <section class="videos-wrapper">
+    <h1>Instructional Videos</h1>
+    <p>
+      Explore our curated collection of instructional videos to practice at home, stay sharp between classes, and learn directly from our instructors. New videos are added regularly!
+    </p>
+
+    <div class="video-grid">
+      <!-- Video 1 -->
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/y8VJB8usZcc" title="Retreating Uppercut - Jeet Kune Do & Boxing" allowfullscreen></iframe>
+        <p>Retreating Uppercut</p>
+      </div>
+
+      <!-- Video 2 -->
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/mH0H6tygLG8" title="Footwork and the Quarter Turn" allowfullscreen></iframe>
+        <p>Footwork & Quarter Turn</p>
+      </div>
+
+      <!-- Video 3 -->
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/gnHb5Of-Gp0" title="Flowing with Locks" allowfullscreen></iframe>
+        <p>Flowing with Locks</p>
+      </div>
+
+      <!-- Video 4 -->
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/0Utn_jr5P8A" title="Advanced Boxing Defense" allowfullscreen></iframe>
+        <p>Advanced Boxing Defense</p>
+      </div>
+    </div>
+
+    <a href="https://www.youtube.com/@DragonFistMMA" target="_blank" class="subscribe-link">
+      Subscribe on YouTube
+    </a>
+  </section>
+
+  <!-- Shared Footer -->
+  <div id="footer-placeholder"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

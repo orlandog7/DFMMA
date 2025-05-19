@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQs | Dragon Fist MMA</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .faq-wrapper {
+      max-width: 900px;
+      margin: auto;
+      font-family: sans-serif;
+      padding: 3rem 1rem;
+    }
+
+    .faq-wrapper h1 {
+      text-align: center;
+      color: #e63946;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .faq {
+      margin-bottom: 2rem;
+    }
+
+    .faq h2 {
+      font-size: 1.1rem;
+      color: #111;
+      background: #f1f1f1;
+      padding: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .faq h2:hover {
+      background: #eaeaea;
+    }
+
+    .faq p {
+      padding: 1rem;
+      background: #f9f9f9;
+      margin: 0;
+      border-radius: 0 0 5px 5px;
+      display: none;
+    }
+
+    .faq.active p {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <main class="faq-wrapper">
+    <h1>Frequently Asked Questions</h1>
+
+    <div class="faq">
+      <h2>What age can my child start martial arts?</h2>
+      <p>We welcome children as young as 4 years old in our Little Dragons program. Classes are designed to be fun, safe, and developmentally appropriate.</p>
+    </div>
+
+    <div class="faq">
+      <h2>Do I need prior experience to join?</h2>
+      <p>No experience is needed! Our classes are beginner-friendly and our instructors will guide you at your own pace.</p>
+    </div>
+
+    <div class="faq">
+      <h2>What styles of martial arts do you teach?</h2>
+      <p>We offer a blended approach rooted in Jeet Kune Do, with elements of boxing, kickboxing, Brazilian Jiu-Jitsu, and self-defense training.</p>
+    </div>
+
+    <div class="faq">
+      <h2>Do I need to be in shape to start?</h2>
+      <p>Nope! Many students start with no prior fitness background. Martial arts will help you build strength, flexibility, and endurance over time.</p>
+    </div>
+
+    <div class="faq">
+      <h2>What should I wear to my first class?</h2>
+      <p>Comfortable workout clothes like a t-shirt and athletic shorts or sweatpants. No shoes are needed—just bring water and a positive attitude!</p>
+    </div>
+
+    <div class="faq">
+      <h2>Do you offer private or onsite sessions?</h2>
+      <p>Yes! We offer private one-on-one training and onsite programs for schools, nonprofits, and organizations. Visit our Onsite or Private Training pages for details.</p>
+    </div>
+
+    <div class="faq">
+      <h2>How do I get started?</h2>
+      <p>Just <a href="contact.html" style="color: #e63946;">contact us</a> or visit the studio! Your first class is free—come try it out!</p>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="script.js"></script>
+  <script>
+    // FAQ Toggle Script
+    const faqs = document.querySelectorAll('.faq');
+    faqs.forEach(faq => {
+      faq.querySelector('h2').addEventListener('click', () => {
+        faq.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>

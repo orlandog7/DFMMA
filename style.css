@@ -1,0 +1,97 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+  }
+  
+  .hero {
+    position: relative;
+    min-height: 80vh;
+    background: url('images/family-banner3.jpg') top center / cover no-repeat;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 1rem;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin: 0;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  }
+  
+  .hero p {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+  }
+  
+  
+  .cta-buttons a {
+    background: #e63946;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    margin: 1rem;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .section {
+    padding: 3rem 1rem;
+    text-align: center;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .section h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .programs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .program {
+    background: white;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 200px;
+  }
+  
+  
+  
+  
