@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Fetch header
-  fetch("/header.html")
+  fetch("/DFMMA/header.html")
     .then(res => res.text())
     .then(data => {
       const header = document.getElementById("header-placeholder");
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch(error => console.error("Error loading header:", error));
 
   // Fetch footer
-  fetch("/footer.html")
+  fetch("/DFMMA/footer.html")
     .then(res => res.text())
     .then(data => {
       const footer = document.getElementById("footer-placeholder");
